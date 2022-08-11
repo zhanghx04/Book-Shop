@@ -7,9 +7,20 @@
 #ifndef BOOK_SHOP_BOOK_H
 #define BOOK_SHOP_BOOK_H
 
-
+/**
+ * @brief Book class used for some operations in a book shop
+ */
 class Book {
 private:
+    /**
+     * Book's information include:
+     *      Author name
+     *      Title name
+     *      Publisher name
+     *
+     *      Book's price
+     *      Stock of the book
+     */
     char* m_author;
     char* m_title;
     char* m_publisher;
@@ -18,6 +29,10 @@ private:
     int* m_stock;
 
 public:
+    /**
+     * Create a new Book object and initialize the basic information
+     * @brief Constructor.
+     */
     Book() {
         m_author = new char[20];
         m_title = new char[20];
@@ -27,10 +42,32 @@ public:
         m_stock = new int();
     }
 
+    /**
+     * @brief Enter the book info from user
+     */
     void feeddata();
+
+    /**
+     * @brief Enter the book info and update
+     */
     void editdata();
+
+    /**
+     * @brief Print out the book information
+     */
     void showdata();
-    int search(char[], char[]);
+
+    /**
+     * @brief Compare the given book name and author name to the information in the stock
+     * @param titleName is the title name from the customer
+     * @param authorName is the author name from the customer
+     * @return 1 if found the book with given title name and author name, 0 otherwise
+     */
+    int search(char titleName[], char authorName[]);
+
+    /**
+     * @brief Sell the amount of book and take out the amount from the stock
+     */
     void buybook();
 
     ~Book() {
