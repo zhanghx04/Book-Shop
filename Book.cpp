@@ -29,7 +29,7 @@ void Book::showdata() {
     cout << "Stock Position: " << *m_stock << endl;
 }
 
-int Book::search(char titleBuy[20], char authorBuy[20]) {
+bool Book::search(char titleBuy[20], char authorBuy[20]) {
     return strcmp(titleBuy, m_title) == 0 &&
             strcmp(authorBuy, m_author) == 0;
 }
@@ -42,7 +42,7 @@ void Book::buybook() {
     if (count <= *m_stock) {
         *m_stock -= count;
         cout << "Successfully Bought " << count << " Books!" << endl;
-        cout << "Total Price: $" << count * *m_price;
+        cout << "Total Price: $" << *m_price * (float)count;
     } else
         cout << "There is not enough books in stock!";
 }

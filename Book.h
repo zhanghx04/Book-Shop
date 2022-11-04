@@ -1,6 +1,20 @@
 //
 // Created by Haoxiang Zhang on 8/11/22.
 //
+/**
+ * @mainpage Book Library Documentation
+ * @section intro_sec Introduction
+ * This is the Book C++ library for Book Shop system.
+ *
+ * @section install_sec Installation
+ * @subsection install_dependencies Installing Dependencies
+ * No dependency needed.
+ * @subsection install_library Installing Library
+ * No library needed.
+ * @subsection install_example Installing Examples
+ * There is no example.
+ */
+
 #include <iostream>
 #include <string>
 
@@ -61,9 +75,9 @@ public:
      * @brief Compare the given book name and author name to the information in the stock
      * @param titleName is the title name from the customer
      * @param authorName is the author name from the customer
-     * @return 1 if found the book with given title name and author name, 0 otherwise
+     * @return true if found the book with given title name and author name, false otherwise
      */
-    int search(char titleName[], char authorName[]);
+    bool search(char titleName[], char authorName[]);
 
     /**
      * @brief Sell the amount of book and take out the amount from the stock
